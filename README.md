@@ -12,6 +12,8 @@
 - pytest
 - pytest-cov
 - black
+- flake8
+- isort
 
 3) Arquivos extras no projeto
 - .coveragerc (cobertura)
@@ -21,11 +23,11 @@
 3) Comandos antes de um push
 
 3.1) Reestruturação do projeto 
-`python -m black . --line-length 80`
+`python -m black . && isort --recursive .`
 
 3.2) Checagem de padronização de código
-- (Windows) `forfiles /s /m *.py /c "cmd /c echo @relpath" | findstr /v "env migrations _pb2.py _pb2_grpc.py" | xargs pylint`
-- (Linux) `find . -name "*.py" -and -not -name "0*.py" | xargs pylint`
+- (Windows) `flake8 && forfiles /s /m *.py /c "cmd /c echo @relpath" | findstr /v "env migrations _pb2.py _pb2_grpc.py" | xargs pylint`
+- (Linux) `flake8 &&  find . -name "*.py" -and -not -name "0*.py" | xargs pylint`
 
 3.3) Testes com cobertura e fluxo
 `pytest --cov`

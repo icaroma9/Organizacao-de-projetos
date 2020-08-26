@@ -1,9 +1,0 @@
-[run]
-branch = True
-omit = 
-    env/*
-    *tests/*
-    *_pb2*.py
-    *migrations*
-[report]
-show_missing = True

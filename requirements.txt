@@ -4,3 +4,4 @@ isort==4.3.21
 pylint==2.5.3
 pytest==6.0.1
 pytest-cov==2.10.1
+pre-commit==2.7.1

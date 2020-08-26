@@ -8,6 +8,7 @@
 - Pasta de arquivos Protocol Buffer: `protos`
 
 2) Bibliotecas necessárias
+- pre-commit
 - pylint
 - pytest
 - pytest-cov
@@ -19,15 +20,14 @@
 - .coveragerc (cobertura)
 - .pylintrc (padronização)
 - .gitignore (renomear a extensão)
+- .pre-commit-config.yaml (pre-commit)
 
-3) Comandos antes de um push
+4) Instalação
+4.1) Instalar dependências
+4.2) Executar `pre-commit install`
 
-3.1) Reestruturação do projeto 
-`python -m black . && isort --recursive .`
+5) Comandos antes de um push
 
-3.2) Checagem de padronização de código
-- (Windows) `flake8 && forfiles /s /m *.py /c "cmd /c echo @relpath" | findstr /v "env migrations _pb2.py _pb2_grpc.py" | xargs pylint`
-- (Linux) `flake8 &&  find . -name "*.py" -and -not -name "0*.py" | xargs pylint`
+5.1) Executar `pre-commit run --all-files`
 
-3.3) Testes com cobertura e fluxo
-`pytest --cov`
+5.2) Testes com cobertura e fluxo `pytest --cov`
